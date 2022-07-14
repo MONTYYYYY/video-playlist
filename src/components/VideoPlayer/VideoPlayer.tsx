@@ -1,11 +1,15 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
+import { Video } from '../../services/pexelsApi';
 
 // Render a YouTube video player
 
-function VideoPlayer() {
+interface IVideoPlayerProp {
+  video : Video
+}
+function VideoPlayer({ video } : IVideoPlayerProp) {
   return (
-    <ReactPlayer url="https://www.youtube.com/watch?v=ysz5S6PUM-U" />
+    <ReactPlayer controls url={video.video_files[0].link} />
   );
 }
 
